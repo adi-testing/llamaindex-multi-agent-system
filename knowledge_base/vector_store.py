@@ -1,3 +1,18 @@
+"""
+AI Knowledge Base Vector Store
+
+This module creates a searchable knowledge base for AI-related information:
+
+1. STORAGE: Converts AI documents into vector embeddings for semantic search
+2. RETRIEVAL: Finds the most relevant information based on query meaning, not just keywords
+3. PERSISTENCE: Saves indexed information to disk for reuse without reprocessing
+4. LOCAL PROCESSING: Uses HuggingFace embedding models instead of OpenAI services 
+5. TOOL INTERFACE: Provides a standard interface for agents to query the knowledge base
+
+The knowledge base acts as a specialized AI librarian that organizes information
+and quickly retrieves relevant context when questioned about AI topics.
+"""
+
 import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional

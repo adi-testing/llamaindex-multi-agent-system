@@ -1,5 +1,3 @@
-import os
-import json
 import logging
 import requests
 from typing import Dict, List, Optional, Any
@@ -79,7 +77,7 @@ class CustomOpenAILike(OpenAILike):
 
 def get_llm(config: Dict[str, Any]) -> LLM:
     """Factory function to get the appropriate LLM based on config."""
-    llm_type = config.get("LLM_TYPE", "local")
+    llm_type = config.get("LLM_TYPE", "lm_studio_local")
     
     if llm_type == "openai":
         logger.info("Using OpenAI LLM")

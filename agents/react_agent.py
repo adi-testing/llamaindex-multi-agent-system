@@ -1,3 +1,20 @@
+"""
+ReActAgentManager: A wrapper class for LlamaIndex's ReActAgent.
+
+Flow:
+1. Constructor (__init__) receives a list of tool objects
+2. The constructor initializes:
+   - self.tools (from parameters)
+   - self.llm (from config)
+   - self.agent (by calling _create_agent())
+3. _create_agent() creates a ReActAgent with the tools and LLM
+4. query() method processes user queries by delegating to the ReActAgent
+   and handles any errors that might occur
+
+The 'self' parameter in each method refers to the specific instance,
+allowing each ReActAgentManager to maintain its own state.
+"""
+
 import logging
 from typing import List, Dict, Any
 import importlib

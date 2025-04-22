@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Model settings
-LLM_TYPE = "local"
+LLM_TYPE = "lm_studio_local"
 LOCAL_LLM_URL = "http://127.0.0.1:1234/v1/chat/completions"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "not-needed-for-local")
 

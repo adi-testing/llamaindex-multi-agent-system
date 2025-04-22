@@ -1,3 +1,17 @@
+"""
+Python Package Information Tool
+
+This module provides a specialized tool for retrieving information about Python packages:
+
+1. KNOWLEDGE BASE: Contains pre-defined information about common Python packages
+2. LOOKUP FUNCTION: Retrieves package details or provides a list of available packages
+3. AGENT INTERFACE: Exposes the functionality through a standardized tool interface
+4. ERROR HANDLING: Gracefully handles queries for packages not in the database
+
+This tool allows AI agents to quickly access information about Python packages
+without needing to search the internet or documentation sites.
+"""
+
 from llama_index.core.tools import FunctionTool, ToolMetadata
 from data.sample_documents import PYTHON_PACKAGES
 
