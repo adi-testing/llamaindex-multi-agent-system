@@ -2,7 +2,7 @@ from datetime import datetime
 from llama_index.core.tools import FunctionTool, ToolMetadata
 
 # This is a mock weather API - in a real application, you would use an actual weather API
-def get_weather(location: str, date: str = None) -> str:
+def _get_weather(location: str, date: str = None) -> str:
     """Get weather information for a location and date."""
     # Simple mock implementation for demonstration purposes
     weather_data = {
@@ -31,7 +31,7 @@ def get_weather(location: str, date: str = None) -> str:
 def get_weather_tool():
     """Create and return a weather FunctionTool."""
     return FunctionTool.from_defaults(
-        fn=get_weather,
+        fn=_get_weather,
         name="weather_tool",
         description="Get weather information for a specific location and optional date (format: YYYY-MM-DD). If no date is provided, current weather is returned."
     )

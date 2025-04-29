@@ -1,7 +1,7 @@
 import math
 from llama_index.core.tools import FunctionTool, ToolMetadata
 
-def calculate(operation: str, a: float, b: float = None) -> str:
+def _calculate(operation: str, a: float, b: float = None) -> str:
     """Perform basic mathematical calculations."""
     try:
         if operation == "add":
@@ -51,7 +51,7 @@ def calculate(operation: str, a: float, b: float = None) -> str:
 def get_calculator_tool():
     """Create and return a calculator FunctionTool."""
     return FunctionTool.from_defaults(
-        fn=calculate,
+        fn=_calculate,
         name="calculator",
         description="Perform mathematical calculations. Available operations: add, subtract, multiply, divide, power, square_root. For square_root, only provide the 'a' parameter."
     )

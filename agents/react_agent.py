@@ -16,12 +16,11 @@ allowing each ReActAgentManager to maintain its own state.
 """
 
 import logging
-from typing import List, Dict, Any
+from typing import List
 import importlib
 
 from llama_index.core.agent import ReActAgent
 from llama_index.core.tools import BaseTool
-from llama_index.core.llms import LLM
 
 from config import LLM_TYPE
 from llm.local_llm import get_llm
@@ -46,12 +45,14 @@ class ReActAgentManager:
             tools=self.tools,
             llm=self.llm,
             verbose=True,
+            max_iterations=10,
         )
     
     def query(self, query_text: str) -> str:
         """Process a query using the ReAct agent."""
         logger.info(f"Processing query with ReAct agent: {query_text}")
         try:
+            # Call the agent's query method to process the input
             response = self.agent.query(query_text)
             return str(response)
         except Exception as e:
