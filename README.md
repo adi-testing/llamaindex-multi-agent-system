@@ -65,6 +65,9 @@ python main.py --agent function
 # Run with a specific query
 python main.py --agent function --query "What is LlamaIndex?"
 
+# Interactive mode with ReAct agent
+python main.py --agent react
+
 # Explicitly specify to use local LLM (default)
 python main.py --llm local
 ```
